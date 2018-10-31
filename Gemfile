@@ -50,7 +50,7 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 ###################### Additional Gems #########################
-gem 'bootstrap-sass',       '3.2.0.0'
+gem 'bootstrap', '~> 4.1.1'
 
 gem 'bcrypt', '~> 3.1.12'
 
@@ -59,3 +59,5 @@ gem 'jquery-rails'
 gem 'jquery-ui-rails'
 
 gem 'faker'
+
+gem 'meta-tags'
