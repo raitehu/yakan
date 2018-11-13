@@ -1,0 +1,13 @@
+<%= form_for(introduction, url: intro_path) do |f| %>
+  <div class="field">
+    <b><%= '追加' if introduction.description.nil? %></b><br>
+    <%= f.text_area :description, class: 'form-control' %>
+    <%= f.hidden_field :id, :value => introduction.id %>
+  </div>
+  <div class="actions" style="display: inline">
+    <%= f.submit "送信", :class=> "btn btn-success badge-pill", :style=> "padding-top: 4px; padding-bottom: 4px;" %>
+  </div>
+  <% unless introduction.description.nil? then %>
+    <%= link_to '削除', introduction, method: :delete, class: 'btn btn-danger badge-pill', style: 'display: inline' %>
+  <% end %>
+<% end %>

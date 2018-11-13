@@ -105,19 +105,22 @@
           <div class="row">
             <div class="col-xs-12 col-md-4" style="text-align:center;">
               <!-- picture -->
-              <img src="images/prof.jpg" style="text-align:center; max-width: 120%;">
+              <%= image_tag 'prof.jpg', style: 'text-align:center; max-width: 120%; display: block; width: auto;', class: 'center-block' %>
             </div>
             <div class="col-xs-12 col-md-8">
               <!-- detail -->
               <h3>向井 弘記</h3>
               <p>
-                金剛流能楽師<br>
-                公益社団法人能楽協会会員<br>
-                金剛流職分 豊嶋三千春師のもとで住込み修業中<br>
-                昭和63年9月生まれ<br>
+                <% @introductions.each do |introduction| %>
+                <%= simple_format(introduction.description) %>
+                <% end %>
               </p>
             <!-- 芸歴 -->
+              <% if @careers.count!=0 %>
+                <%= render partial: 'careers/career', collection: @careers, spacer_template: 'separator' %>
+              <% end %>
             <!--
+              
             <table class="table" style="table-layout:fixed;">
               <tbody>
                 <tr>
@@ -156,7 +159,7 @@
         <div class="row">
           <div class="col-xs-12 col-md-4" style="text-align:center;">
             <!-- poster -->
-            <img src="images/s_sesshouseki01.jpg" style="text-align:center; max-width: 120%;">
+            <%= image_tag 's_sesshouseki01.jpg', style: 'text-align:center; max-width: 120%; display: block; width: auto;', class: 'center-block' %>
           </div>
           <div class="col-xs-12 col-md-8">
             <!-- detail -->

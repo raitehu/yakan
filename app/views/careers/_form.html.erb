@@ -1,0 +1,16 @@
+<%= form_for(career, url: career_path) do |f| %>
+  <div class="field">
+    <b><%= '追加' if career.description.nil? %></b><br>
+    <%= f.date_field :the_day, class: 'form-control' %>
+    <%= f.text_field :title, class: 'form-control' %>
+    <%= f.text_area :description, class: 'form-control' %>
+    <%= f.hidden_field :id, :value => career.id %>
+  </div>
+
+  <div class="actions" style="display: inline">
+    <%= f.submit "送信", :class=>"btn btn-success badge-pill", :style=> "padding-top: 4px; padding-bottom: 4px;" %>
+  </div>
+  <% unless career.description.nil? then %>
+    <%= link_to '削除', career, method: :delete, class: 'btn btn-danger badge-pill', style: 'display: inline' %>
+  <% end %>
+<% end %>

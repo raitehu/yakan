@@ -1,0 +1,297 @@
+
+  <div class="row" id="top">
+    <%= image_tag 'top.png', alt: '向井弘記能の会 ロゴ', height: 300, id: 'top-image' %>
+  </div>
+<!-------------------------------------------------->
+<!--                 公演情報                     -->
+<!-------------------------------------------------->
+  <div class="row" id="performance">
+    <div class="col-md-2 visible-md visible-lg">
+    </div>
+    <div class="col-xs-10 col-md-8">
+        <h1 class="whitecolor">公演情報</h1>
+        <div class="container">
+            <!-- 公演一回分 -->
+            <div class="row">
+                <div class="col-xs-12 col-md-4" style="text-align:center;">
+                    <div class="perform-title whitecolor d-inline">
+                        <!--～ 大津で見る能の心 ～ <br>-->
+                        <h3>豊嶋研鑽能の会</h3>
+                    </div>
+                </div>                                    
+            </div>
+            <div class="row">
+                <div class="col-xs-12 col-md-4" style="text-align:center;">
+                    <!-- poster -->
+                    <a href="images/now_printing.png"  rel="lightbox"><img src="images/now_printing.png" style="text-align:center; max-width:120%;"></a>
+                </div>
+                <div class="col-xs-12 col-md-8 whitecolor">
+                    <!-- detail -->
+                    <table class="table" style="table-layout:fixed;">
+                        <colgroup>
+                            <col style="width: 80px;">
+                            <col style="width: 100px;">
+                            <col style="width: auto;">
+                        </colgroup>
+                        <tbody>
+                            <!--演目，役柄，日時，場所，詳細，料金-->
+                            <tr>
+                                <td>
+                                    <div class="center">日時</div>
+                                </td>
+                                <td colspan="2">
+                                    平成31年8月18日<br>
+                                    13時開演 (開場 12:30)
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><div class="center">場所</div></td>
+                                <td colspan="2">
+                                    <a href="http://www.kongou-net.com/index.html" target="_blank">
+                                        金剛能楽堂
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><div class="center">演目</div></td>
+                                <td>
+                                    泰山府君<br>
+                                    融
+                                </td>
+                                <td>
+                                    シテ：藤田章三　ツレ：北川米喜<br>
+                                    シテ：向井弘記
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><div class="center">料金</div></td>
+                                <td>一般料金<br>学生料金</td>
+                                <td>3,000円<br>1,500円<br>※全席自由</td>
+                            </tr>
+                            <tr>
+                                <td><div class="center">詳細</div></td>
+                                <td colspan="2">
+                                    <!--
+                                    第四回豊嶋研鑽能の会については、能「自然居士」シテ<a href="http://anjy.lekumo.biz/life/2018/05/vol368-afc3.html" target="_blank">田中敏文さんのブログ</a>もご覧下さい。<br>
+                                    主な記事は以下の通りです。※今後追加予定の記事も含みます。<br>
+                                    ・各番組に対するショートコメント<br>
+                                    ・FAQ（素朴な疑問や基本的な質問と回答）<br>
+                                    ・能の概要（初心者向け解説）<br>
+                                    ・自然居士の解説<br>
+                                    ・その他トピックス<br>                                                
+                                    お車でご来館のお客様には、会館敷地内駐車場(50台)をご利用いただけますが、混み合う場合もございますので、なるべく公共の交通機関をご利用ください。
+                                    -->
+                                    準備中です
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <span class="badge-danger badge-pill">チケットのご購入はこちらから</span>
+                </div>
+            </div>
+            <!-- 公演一回ここまで -->
+        </div>
+    </div>
+  </div>
+<!-------------------------------------------------->
+<!--                 経歴紹介                     -->
+<!-------------------------------------------------->
+  <div class="row" id="resume">
+    <div class="col-md-2 visible-md visible-lg">
+    </div>
+    <div class="col-xs-10 col-md-8">
+        <h1>経歴紹介</h1>
+        <div class="container">
+          <div class="row">
+            <div class="col-xs-12 col-md-4" style="text-align:center;">
+              <!-- picture -->
+              <%= image_tag 'prof.jpg', style: 'text-align:center; max-width: 120%; display: block; width: auto;', class: 'center-block' %>
+            </div>
+            <div class="col-xs-12 col-md-8">
+              <!-- detail -->
+              <h3>向井 弘記</h3>
+              <p>
+                <% @introductions.each do |introduction| %>
+                <%= render 'introductions/form', introduction: introduction %>
+                <% end %>
+                <%= render 'introductions/form', introduction: @introduction %>
+              </p>
+            <!-- 芸歴 -->
+                <% @careers.each do |career| %>
+                <%= render 'careers/form', career: career %>
+                <% end %>
+              <%= render 'careers/form', career: @career %>
+            <!--
+            <table class="table" style="table-layout:fixed;">
+              <tbody>
+                <tr>
+                  <td style="width:200px;">
+                    2019年XX月XX日
+                  </td>
+                  <td>
+                    石橋披キ
+                  </td>
+                </tr>
+                <tr>
+                  <td style="width:200px;">
+                    20XX年XX月XX日
+                  </td>
+                  <td>
+                    道成寺披キ
+                  </td>
+                </tr>    
+              </tbody>
+            </table>
+            -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+<!-------------------------------------------------->
+<!--                  稽古情報                    -->
+<!-------------------------------------------------->
+  <div class="row" id="practice">
+    <div class="col-md-2 visible-md visible-lg">
+    </div>
+    <div class="col-xs-10 col-md-8">
+      <h1>稽古情報</h1>
+      <div class="container">
+        <div class="row">
+          <div class="col-xs-12 col-md-4" style="text-align:center;">
+            <!-- poster -->
+            <%= image_tag 's_sesshouseki01.jpg', style: 'text-align:center; max-width: 120%; display: block; width: auto;', class: 'center-block' %>
+          </div>
+          <div class="col-xs-12 col-md-8">
+            <!-- detail -->
+            <h3>京都会場</h3>
+            <p>
+                京都市東山区にて月1～2回程度お謡いと仕舞の稽古を行っております。<br>
+                少しでも興味を持たれた方は<a href="#qanda"><span class="badge-danger badge-pill">こちら</span></a>よりご連絡ください。
+            </p>
+            <table class="table" style="table-layout:fixed;">
+                <tbody>
+                    <tr>
+                        <td>
+                            お稽古日程
+                        </td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td style="width:200px;">
+                            月二回程度
+                        </td>
+                        <td>
+                            京都市東山区にて
+                        </td>
+                    </tr>
+                    <!--
+                    <tr>
+                        <td style="width:200px;">
+                            20XX年XX月XX日
+                        </td>
+                        <td>
+                            山科
+                        </td>
+                    </tr>    
+                    -->
+                </tbody>
+            </table>
+            <!--
+            <h3>東京会場</h3>
+            <p>
+                東京にて月1回お謡いと仕舞の稽古を行っております。<br>
+                少しでも興味を持たれた方はこちらよりご連絡ください。
+            </p>
+            <table class="table" style="table-layout:fixed;">
+                <tbody>
+                    <tr>
+                        <td>
+                            お稽古日程
+                        </td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td style="width:200px;">
+                            2019年XX月XX日
+                        </td>
+                        <td>
+                            風の塔
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="width:200px;">
+                            20XX年XX月XX日
+                        </td>
+                        <td>
+                            銀座
+                        </td>
+                    </tr>    
+                </tbody>
+            </table>
+            -->
+            </div>
+          </div>
+      </div>
+    </div>
+  </div>
+<!-------------------------------------------------->
+<!--                 お問い合わせ                 -->
+<!-------------------------------------------------->
+  <div class="row" id="contact">
+    <div class="col-md-2 visible-md visible-lg">
+    </div>
+    <div class="col-xs-10 col-md-8">
+      <h1>お問い合わせ</h1>
+      <div class="container">
+        <div class="row">
+            <div class="col-md-2 visible-md visible-lg"></div>
+            <div class="col-xs-10 col-md-8" style="margin-left:20px; margin-right:20px;">
+                <a href="kensan.html" target="_blank">豊嶋研鑽能の会</a>のチケットに関しましても<span class="label badge-light badge-pill">当フォーラム</span>からお願いいたします。<br><br>
+                <form action="confirm.php" method="post" name="Form1">
+                    <div class="form-group">
+                        <label>お名前　<span class="label badge-danger badge-pill">必須</span></label>
+                        <input type="text" class="form-control" placeholder="能楽　太朗" name="name" data-required-error="名前を入れてください" required>
+                        <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
+                        <div class="help-block with-errors"></div>
+                    </div>
+                    <div class="form-group">
+                        <label>メールアドレス　<span class="label badge-danger badge-pill">必須</span></label>
+                        <input type="email" class="form-control" placeholder="xxxxxx@yahoo.co.jp" name="email" required>
+                        <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
+                        <div class="help-block with-errors"></div>
+                    </div>
+                    <div class="form-group">
+                        <label>住所</label>
+                        <input type="text" class="form-control" placeholder="○○県△△市□□町xxxx-yy-z" name="address">
+                    </div>
+                    <div class="form-group">
+                        <label>電話番号</label>
+                        <input type="text" class="form-control" placeholder="xxx-yyyy-zzzz" name="phone">
+                    </div>
+                    <label>件名</label><br>
+                    <label class="radio-inline">
+                        <input type="radio" name="subjectR" value="checkboxA" onClick="changeDisabled()"> 公演のご依頼について
+                    </label>
+                    <label class="radio-inline">
+                        <input type="radio" name="subjectR" value="checkboxB" onClick="changeDisabled()"> お稽古について
+                    </label>
+                    <label class="radio-inline">
+                        <input type="radio" name="subjectR" value="others" onClick="changeDisabled()"> その他(下記の件名にご記入ください)
+                    </label>
+                    <div class="form-group" style="margin-top:10px;">
+                        <input type="text" class="form-control" placeholder="〇〇について" name="subject" onClick="changeDisabled()">
+                    </div>
+                    <div class="form-group">
+                        <label>お問い合わせ内容　<span class="label badge-danger badge-pill">必須</span></label>
+                        <textarea placeholder="お問い合わせ内容" rows="10" class="form-control" name="main" required></textarea>
+          		<span class="glyphicon form-control-feedback" aria-hidden="true"></span>
+	          	<div class="help-block with-errors"></div>
+                    </div>
+                    <button type="submit" class="btn btn-light badge-pill btn-lg btn-block">送信</button>
+                </form> 
+            </div>
+        </div>
+    </div>
+  </div>
+  </div>
