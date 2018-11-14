@@ -1,3 +1,2 @@
-<%= career.the_day.strftime('%Y年 %m月 ') %>
-<b><%= career.title %></b><br>
+<h5><%= career.title %></h5><%= career.the_day.strftime('%Y年 %m月 ') %><br>
 <%= simple_format(career.description) unless career.description.nil? %>

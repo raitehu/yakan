@@ -54,6 +54,8 @@ gem 'bootstrap', '~> 4.1.1'
 
 gem 'bcrypt', '~> 3.1.12'
 
+gem 'jquery-turbolinks'
+
 gem 'jquery-rails'
 
 gem 'jquery-ui-rails'
