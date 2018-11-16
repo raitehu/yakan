@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20181115151837) do
+ActiveRecord::Schema.define(version: 20181116080443) do
 
   create_table "careers", force: :cascade do |t|
     t.date "the_day"
@@ -44,6 +44,10 @@ ActiveRecord::Schema.define(version: 20181115151837) do
     t.string "ticket_url"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.time "open_time"
+    t.time "start_time"
+    t.time "finish_time"
+    t.boolean "has_reserved"
   end
 
   create_table "players", force: :cascade do |t|

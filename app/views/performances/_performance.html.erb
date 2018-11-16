@@ -24,8 +24,10 @@
           <td>日時</td>
           <td>
             <%= performance.performance_date.strftime('%Y年 %m月 %d日') %><br>
-            ※※時開演(開場※※時※※)<br>
-            ※※時終演予定
+            <%= performance.start_time.strftime('%H:%M開演') unless performance.start_time.nil?%>
+            <%= performance.open_time.strftime('(開場%H:%M)') unless performance.open_time.nil?%>
+            <%= tag.br unless performance.start_time.nil?%>
+            <%= performance.finish_time.strftime('%H:%M終演予定') unless performance.finish_time.nil?%>
           </td>
         </tr>
         <tr>
@@ -48,7 +50,10 @@
         </tr>
         <tr>
           <td>料金</td>
-          <td>※※</td>
+          <td>
+            ※※<br>
+            <%= '※全席自由' unless performance.has_reserved %>
+          </td>
         </tr>
         <tr>
           <td>詳細</td>

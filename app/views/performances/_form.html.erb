@@ -22,19 +22,20 @@
     <div class="col-xs-12 col-md-8 whitecolor">
       <div class="field">
         公演日
-        <%= f.date_field :performance_date, class: 'form-control' %>
+        <%= f.date_field :performance_date, class: 'form-control' %><br>
         開場時間<br>
-        ※※※<br>
+        <%= f.time_field :open_time, class: 'form-control' %>
         開演時間<br>
-        ※※※<br>
+        <%= f.time_field :start_time, class: 'form-control' %>
         終演時間<br>
-        ※※※<br>
+        <%= f.time_field :finish_time, class: 'form-control' %><br>
         場所
-        <%= f.text_field :venue, class: 'form-control' %>
+        <%= f.text_field :venue, class: 'form-control' %><br>
         演目<br>
         ※※※<br>
         料金<br>
         ※※※<br>
+        <%= f.check_box :has_reserved, {class: 'form-check-input' }, 'true', 'false' %>指定席が存在する<br>
         詳細
         <%= f.text_area :description, class: 'form-control' %>
         チケットの販売URL

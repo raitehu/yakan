@@ -31,7 +31,7 @@ class PerformancesController < ApplicationController
 
   private
     def performance_params
-      params.require(:performance).permit(:title, :subtitle, :performance_date, :venue, :poster, :description, :ticket_url)
+      params.require(:performance).permit(:title, :subtitle, :performance_date, :venue, :poster, :description, :ticket_url, :open_time, :start_time, :finish_time, :has_reserved)
     end
     def set_performance
       @performance = Performance.find(params[:id])
