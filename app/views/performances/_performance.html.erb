@@ -1,0 +1,63 @@
+<div class="row">
+  <div class="col-xs-12 col-md-4" style="text-align:left;">
+    <h4><%= performance.title %></h4>
+    <%= performance.subtitle unless performance.subtitle.nil? %>
+  </div>
+</div>
+<div class="row">
+  <div class="col-xs-12 col-md-4" style="text-align:center;">
+    <!-- poster -->
+    <% if performance.poster.to_s.empty? %>
+      <%= image_tag 'now_printing' %>
+    <% else %>
+      <%= image_tag performance.poster.to_s %>
+    <% end %>
+  </div>
+  <div class="col-xs-12 col-md-8 whitecolor">
+    <table class="table" style="table-layout:fixed;">
+      <colgroup>
+        <col style="width: 80px;">
+        <col style="width: auto;">
+      </colgroup>
+      <tbody>
+        <tr>
+          <td>日時</td>
+          <td>
+            <%= performance.performance_date.strftime('%Y年 %m月 %d日') %><br>
+            ※※時開演(開場※※時※※)<br>
+            ※※時終演予定
+          </td>
+        </tr>
+        <tr>
+          <td>場所</td>
+          <td>
+            <% if performance.venue=='金剛能楽堂' then %>
+              <%= link_to '金剛能楽堂', 'http://www.kongou-net.com/', target: '_blank' %>
+            <% elsif performance.venue=='大津市伝統芸能会館' then %>
+              <%= link_to '大津市伝統芸能会館', 'http://www.dentogeinokaikan.net/', target: '_blank' %>
+            <% elsif performance.venue=='京都観世会館' then %>
+              <%= link_to '京都観世会館', 'http://www.kyoto-kanze.jp/', target: '_blank' %>
+            <% else %>
+              <%= performance.venue %>
+            <% end %>
+          </td>
+        </tr>
+        <tr>
+          <td>演目</td>
+          <td>※※</td>
+        </tr>
+        <tr>
+          <td>料金</td>
+          <td>※※</td>
+        </tr>
+        <tr>
+          <td>詳細</td>
+          <td>
+            <%= simple_format(performance.description) %>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <%= link_to('チケットのご購入はこちらから', performance.ticket_url, class: 'btn btn-danger badge-pill') unless performance.ticket_url.nil? %>
+  </div>
+</div>

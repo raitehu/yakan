@@ -1,0 +1,54 @@
+<%= form_for(performance, url: per_path, html: { multipart: true }) do |f| %>
+  <b><%= '新規公演追加' if performance.title.nil? %></b><br>
+  <div class="row">
+    <div class="col-xs-12 col-md-4" style="text-align:center;">
+      <div class="field">
+        公演名<br>
+        <%= f.text_field :title, class: 'form-control-lg' %><br>
+        サブタイトル<br>
+        <%= f.text_field :subtitle, class: 'form-control-sm' %>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-12 col-md-4" style="text-align:center;">
+      <div class="field">
+        <!-- poster -->
+        ポスター<br>
+        <%= image_tag performance.poster.to_s unless performance.poster.to_s.empty? %><br>
+        <%= f.file_field :poster, class: 'form-control-file' %>
+      </div>
+    </div>
+    <div class="col-xs-12 col-md-8 whitecolor">
+      <div class="field">
+        公演日
+        <%= f.date_field :performance_date, class: 'form-control' %>
+        開場時間<br>
+        ※※※<br>
+        開演時間<br>
+        ※※※<br>
+        終演時間<br>
+        ※※※<br>
+        場所
+        <%= f.text_field :venue, class: 'form-control' %>
+        演目<br>
+        ※※※<br>
+        料金<br>
+        ※※※<br>
+        詳細
+        <%= f.text_area :description, class: 'form-control' %>
+        チケットの販売URL
+        <%= f.text_field :ticket_url, class: 'form-control' %>
+        <%= f.hidden_field :id, :value => performance.id %>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="actions" style="display: inline">
+        <%= f.submit "送信", :class=>"btn btn-success badge-pill", :style=> "padding-top: 4px; padding-bottom: 4px;" %>
+    </div>
+    <% unless performance.title.nil? then %>
+      <%= link_to '削除', performance, method: :delete, class: 'btn btn-danger badge-pill', style: 'display: inline; margin-bottom: 50px;' %>
+    <% end %>
+  </div>
+<% end %>

@@ -11,85 +11,10 @@
     <div class="col-xs-10 col-md-8">
         <h1 class="whitecolor">公演情報</h1>
         <div class="container">
-            <!-- 公演一回分 -->
-            <div class="row">
-                <div class="col-xs-12 col-md-4" style="text-align:center;">
-                    <div class="perform-title whitecolor d-inline">
-                        <!--～ 大津で見る能の心 ～ <br>-->
-                        <h3>豊嶋研鑽能の会</h3>
-                    </div>
-                </div>                                    
-            </div>
-            <div class="row">
-                <div class="col-xs-12 col-md-4" style="text-align:center;">
-                    <!-- poster -->
-                    <a href="images/now_printing.png"  rel="lightbox"><img src="images/now_printing.png" style="text-align:center; max-width:120%;"></a>
-                </div>
-                <div class="col-xs-12 col-md-8 whitecolor">
-                    <!-- detail -->
-                    <table class="table" style="table-layout:fixed;">
-                        <colgroup>
-                            <col style="width: 80px;">
-                            <col style="width: 100px;">
-                            <col style="width: auto;">
-                        </colgroup>
-                        <tbody>
-                            <!--演目，役柄，日時，場所，詳細，料金-->
-                            <tr>
-                                <td>
-                                    <div class="center">日時</div>
-                                </td>
-                                <td colspan="2">
-                                    平成31年8月18日<br>
-                                    13時開演 (開場 12:30)
-                                </td>
-                            </tr>
-                            <tr>
-                                <td><div class="center">場所</div></td>
-                                <td colspan="2">
-                                    <a href="http://www.kongou-net.com/index.html" target="_blank">
-                                        金剛能楽堂
-                                    </a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td><div class="center">演目</div></td>
-                                <td>
-                                    泰山府君<br>
-                                    融
-                                </td>
-                                <td>
-                                    シテ：藤田章三　ツレ：北川米喜<br>
-                                    シテ：向井弘記
-                                </td>
-                            </tr>
-                            <tr>
-                                <td><div class="center">料金</div></td>
-                                <td>一般料金<br>学生料金</td>
-                                <td>3,000円<br>1,500円<br>※全席自由</td>
-                            </tr>
-                            <tr>
-                                <td><div class="center">詳細</div></td>
-                                <td colspan="2">
-                                    <!--
-                                    第四回豊嶋研鑽能の会については、能「自然居士」シテ<a href="http://anjy.lekumo.biz/life/2018/05/vol368-afc3.html" target="_blank">田中敏文さんのブログ</a>もご覧下さい。<br>
-                                    主な記事は以下の通りです。※今後追加予定の記事も含みます。<br>
-                                    ・各番組に対するショートコメント<br>
-                                    ・FAQ（素朴な疑問や基本的な質問と回答）<br>
-                                    ・能の概要（初心者向け解説）<br>
-                                    ・自然居士の解説<br>
-                                    ・その他トピックス<br>                                                
-                                    お車でご来館のお客様には、会館敷地内駐車場(50台)をご利用いただけますが、混み合う場合もございますので、なるべく公共の交通機関をご利用ください。
-                                    -->
-                                    準備中です
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                    <span class="badge-danger badge-pill">チケットのご購入はこちらから</span>
-                </div>
-            </div>
-            <!-- 公演一回ここまで -->
+            <% @performances.each do |performance| %>
+            <%= render 'performances/form', performance: performance %>
+            <% end %>
+            <%= render 'performances/form', performance: @performance %>
         </div>
     </div>
   </div>

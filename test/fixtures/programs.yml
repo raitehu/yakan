@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  format: MyString
+  program_title: MyString
+  effect: MyString
+  performance_id: 
+
+two:
+  format: MyString
+  program_title: MyString
+  effect: MyString
+  performance_id: 

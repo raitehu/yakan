@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  subtitle: MyString
+  performance_date: 2018-11-16
+  venue: MyString
+  poster: MyString
+  description: MyText
+  ticket_url: MyString
+
+two:
+  title: MyString
+  subtitle: MyString
+  performance_date: 2018-11-16
+  venue: MyString
+  poster: MyString
+  description: MyText
+  ticket_url: MyString

@@ -2,6 +2,26 @@ Rails.application.routes.draw do
   root 'static_pages#index'
   get 'manage', to: 'static_pages#manage'
 
+  resources :performances
+  post 'per', to: 'performances#create'
+  delete 'per', to: 'performances#destroy'
+  patch 'per', to: 'performances#update'
+
+  resources :fee_structures
+  post 'fee', to: 'fee_structures#create'
+  delete 'fee', to: 'fee_structures#destroy'
+  patch 'fee', to: 'fee_structures#update'
+
+  resources :programs
+  post 'pro', to: 'programs#create'
+  delete 'pro', to: 'programs#destroy'
+  patch 'pro', to: 'programs#update'
+
+  resources :players
+  post 'play', to: 'players#create'
+  delete 'play', to: 'players#destroy'
+  patch 'play', to: 'players#update'
+
   resources :careers
   post 'car', to: 'careers#create'
   delete 'car', to: 'careers#destroy'

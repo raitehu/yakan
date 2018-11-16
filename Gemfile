@@ -63,3 +63,9 @@ gem 'jquery-ui-rails'
 gem 'faker'
 
 gem 'meta-tags'
+
+gem 'carrierwave'
+
+gem 'rmagick', '~> 2.16.0'
+
+gem  'nested_form_fields'
