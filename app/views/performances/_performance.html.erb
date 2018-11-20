@@ -51,7 +51,10 @@
         <tr>
           <td>料金</td>
           <td>
-            ※※<br>
+            <% @fee_structures.where(performance_id: performance.id).each do |fee_structure| %>
+              <%= fee_structure.who %> : 
+              <%= fee_structure.how_much %>円<br>
+            <% end %>
             <%= '※全席自由' unless performance.has_reserved %>
           </td>
         </tr>
@@ -63,6 +66,6 @@
         </tr>
       </tbody>
     </table>
-    <%= link_to('チケットのご購入はこちらから', performance.ticket_url, class: 'btn btn-danger badge-pill') unless performance.ticket_url.nil? %>
+    <%= link_to('チケットのご購入はこちらから', performance.ticket_url, class: 'btn btn-danger badge-pill') unless performance.ticket_url.empty? %>
   </div>
 </div>

@@ -32,10 +32,24 @@
         場所
         <%= f.text_field :venue, class: 'form-control' %><br>
         演目<br>
-        ※※※<br>
+        ※※※<br><br>
         料金<br>
-        ※※※<br>
-        <%= f.check_box :has_reserved, {class: 'form-check-input' }, 'true', 'false' %>指定席が存在する<br>
+        <table class="table table-striped table-hover">
+          <tbody>
+            <tr>
+              <th>誰が/どの席が</th>
+              <th>いくら</th>
+              <th>削除</th>
+            </tr>
+            <%= f.nested_fields_for :fee_structures, wrapper_tag: :tr do |q| %>
+              <td><%= q.text_field :who, class: 'form-control' %></td>
+              <td><%= q.number_field :how_much, class: 'form-control' %></td>
+              <td><%= q.remove_nested_fields_link '削除', class: 'btn btn-danger', role: 'button' %></td>
+            <% end %>
+          </tbody>
+        </table>
+        <%= f.add_nested_fields_link :fee_structures, '席の追加', class: 'btn btn-primary', role: 'button' %><br>
+        <%= f.check_box :has_reserved, {class: 'form-check-input' }, 'true', 'false' %>指定席が存在する<br><br>
         詳細
         <%= f.text_area :description, class: 'form-control' %>
         チケットの販売URL
@@ -45,11 +59,15 @@
     </div>
   </div>
   <div class="row">
-    <div class="actions" style="display: inline">
-        <%= f.submit "送信", :class=>"btn btn-success badge-pill", :style=> "padding-top: 4px; padding-bottom: 4px;" %>
+    <div class="col-xs-12 col-md-4">
     </div>
-    <% unless performance.title.nil? then %>
-      <%= link_to '削除', performance, method: :delete, class: 'btn btn-danger badge-pill', style: 'display: inline; margin-bottom: 50px;' %>
-    <% end %>
+    <div class="col-xs-12 col-md-4">
+      <div class="actions" style="display: inline">
+        <%= f.submit "送信", :class=>"btn btn-success badge-pill", :style=> "padding-top: 4px; padding-bottom: 4px;" %>
+      </div>
+      <% unless performance.title.nil? then %>
+        <%= link_to '削除', performance, method: :delete, class: 'btn btn-danger badge-pill', style: 'display: inline; margin-bottom: 50px;' %>
+      <% end %>
+    </div>
   </div>
 <% end %>
